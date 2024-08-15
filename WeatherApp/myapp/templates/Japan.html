@@ -1,0 +1,55 @@
+<!-- weather.html -->
+
+{% extends "base.html" %}
+{% block title %}Global Weather{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        {% load static %}
+        background-image: url("{% static 'myapp/images/Japan.jpg' %}");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1 {
+        margin-top: 80px;
+        margin-left: 0px;
+        font-size: 4em;
+        color: rgb(0, 0, 0);
+    }
+    .weather-info {
+        top: -20px;
+        left: 500px;
+       
+    }
+    .weather-info i {
+        margin-right: 10px;
+        color: #f8e71c;
+    }
+    .text-box {
+        position: relative;
+        color: #000;
+        font-size: 1.5em;
+        top: -20px;
+        left: -100px;
+    }
+</style>
+
+<h1 class="animate__animated animate__fadeInUp">JAPAN WEATHER</h1>
+
+<div class="weather-info">
+    <p><i class="fas fa-globe"></i>Country: {{ country }}</p>
+    <p><i class="fas fa-thermometer-half"></i>Temperature: {{ temperature }} °F</p>
+    <p><i class="fas fa-map-marker-alt"></i>Coordinates: {{ coordinates }}</p>
+    <p><i class="fas fa-temperature-high"></i>Feels Like: {{ feels_like }} °F</p>
+    <p><i class="fas fa-tint"></i>Humidity: {{ humidity }}%</p>
+    <p><i class="fas fa-tachometer-alt"></i>Pressure: {{ pressure }} hPa</p>
+    <p><i class="fas fa-eye"></i>Visibility: {{ visibility }} km</p>
+    <p><i class="fas fa-wind"></i>Wind Direction: {{ wind_direction }}</p>
+    <p><i class="fas fa-wind"></i>Wind Speed: {{ wind_speed }} km/h</p>
+    <p><i class="fas fa-cloud-sun"></i>Description: {{ description }}</p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+<!-- weather.html -->
+
+{% extends "base.html" %}
+{% block title %}Global Weather{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        {% load static %}
+        background-image: url("{% static 'myapp/images/Demonslayer.jpg' %}");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    h1 {
+        margin-top: 80px;
+        margin-left: 0px;
+        font-size: 4em;
+        color: rgb(0, 0, 0);
+    }
+    .weather-info {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        width: fit-content;
+        margin: 20px auto;
+    }
+    .text-box {
+        position: relative;
+        color: #000;
+        font-size: 1.5em;
+        top: -20px;
+        left: -100px;
+    }
+</style>
+
+<h1 class="animate__animated animate__fadeInUp">GLOBAL WEATHER</h1>
+
+<div class="weather-info">
+    <p>Country: {{ country }}</p>
+    <p>Temperature: {{ temperature }} °F</p>
+    <p>Coordinates: {{ coordinates }}</p>
+    <p>Feels Like: {{ feels_like }} °F</p>
+    <p>Humidity: {{ humidity }}%</p>
+    <p>Pressure: {{ pressure }} hPa</p>
+    <p>Visibility: {{ visibility }} km</p>
+    <p>Wind Direction: {{ wind_direction }}</p>
+    <p>Wind Speed: {{ wind_speed }} km/h</p>
+    <p>Description: {{ description }}</p>
+</div>
+
+<div class="text-box">
+    <p>Dem.</p>
+</div>
+
+{% endblock %}
